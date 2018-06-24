@@ -38,7 +38,9 @@ namespace WindowsFormsApp1
         private void button4_Click(object sender, EventArgs e)
         {
             listView1.Items.Clear();
-            SQLiteConnection scn = new SQLiteConnection(@"Data Source=C:\Users\H S Umer Farooq\mydb.db");
+            //SQLiteConnection scn = new SQLiteConnection(@"Data Source=C:\Users\H S Umer Farooq\mydb.db");
+            SQLiteConnection scn = new SQLiteConnection(@"Data Source=mydb.db");
+
             scn.Open();
             SQLiteCommand sq;
             sq = new SQLiteCommand("select * from table1 where date between '" + dateTimePicker2.Text + "' and '" + dateTimePicker3.Text + "'", scn);
@@ -63,7 +65,9 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SQLiteConnection scn = new SQLiteConnection(@"Data Source=C:\Users\H S Umer Farooq\mydb.db");
+            //SQLiteConnection scn = new SQLiteConnection(@"Data Source=C:\Users\H S Umer Farooq\mydb.db");
+            SQLiteConnection scn = new SQLiteConnection(@"Data Source=mydb.db");
+
             scn.Open();
             SQLiteCommand sq;
             sq = new SQLiteCommand("update table1 set exit_t='" + DateTime.Now.ToShortTimeString() + "' where id='" + listView1.SelectedItems[0].Text + "'", scn);

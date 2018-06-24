@@ -19,7 +19,9 @@ namespace WindowsFormsApp1
 
         public string admin;
    
-        SQLiteConnection conn = new SQLiteConnection(@"Data Source=C:\Users\H S Umer Farooq\mydb.db");
+        //SQLiteConnection conn = new SQLiteConnection(@"Data Source=C:\Users\H S Umer Farooq\mydb.db");
+        SQLiteConnection conn = new SQLiteConnection(@"Data Source=mydb.db");
+
         SQLiteCommand command;
         public Form1()
         {

@@ -13,7 +13,9 @@ namespace WindowsFormsApp1
 {
     public partial class NewProfile : Form
     {
-        SQLiteConnection conn = new SQLiteConnection(@"Data Source=C:\Users\H S Umer Farooq\mydb.db");
+        //SQLiteConnection conn = new SQLiteConnection(@"Data Source=C:\Users\H S Umer Farooq\mydb.db");
+        SQLiteConnection conn = new SQLiteConnection(@"Data Source=mydb.db");
+
         SQLiteCommand command;
         public NewProfile()
         {
