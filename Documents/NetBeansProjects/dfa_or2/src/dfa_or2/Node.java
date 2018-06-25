@@ -12,6 +12,7 @@ package dfa_or2;
 public class Node {
     int x;
     int y;
+    int index;
 
     public Node(int x, int y) {
         this.x = x;

@@ -23,7 +23,7 @@ public class Mf0 {
         int initial_state = 0;
         int final_states[] = { 0 };
         int[][] transitionTable = { {1,3},
-                                    {0,2},
+                                    {0,3},
                                     {3,1},
                                     {2,0} };
         char[] lang = {'a','b'};
