@@ -1,0 +1,7 @@
+C:\Users\H S Umer Farooq\Documents\Visual Studio 2017\Projects\ConsoleAppAssigment00\ConsoleAppAssigment00\bin\Debug\ConsoleAppAssigment00.exe.config
+C:\Users\H S Umer Farooq\Documents\Visual Studio 2017\Projects\ConsoleAppAssigment00\ConsoleAppAssigment00\bin\Debug\ConsoleAppAssigment00.exe
+C:\Users\H S Umer Farooq\Documents\Visual Studio 2017\Projects\ConsoleAppAssigment00\ConsoleAppAssigment00\bin\Debug\ConsoleAppAssigment00.pdb
+C:\Users\H S Umer Farooq\Documents\Visual Studio 2017\Projects\ConsoleAppAssigment00\ConsoleAppAssigment00\obj\Debug\ConsoleAppAssigment00.csprojResolveAssemblyReference.cache
+C:\Users\H S Umer Farooq\Documents\Visual Studio 2017\Projects\ConsoleAppAssigment00\ConsoleAppAssigment00\obj\Debug\ConsoleAppAssigment00.csproj.CoreCompileInputs.cache
+C:\Users\H S Umer Farooq\Documents\Visual Studio 2017\Projects\ConsoleAppAssigment00\ConsoleAppAssigment00\obj\Debug\ConsoleAppAssigment00.exe
+C:\Users\H S Umer Farooq\Documents\Visual Studio 2017\Projects\ConsoleAppAssigment00\ConsoleAppAssigment00\obj\Debug\ConsoleAppAssigment00.pdb
