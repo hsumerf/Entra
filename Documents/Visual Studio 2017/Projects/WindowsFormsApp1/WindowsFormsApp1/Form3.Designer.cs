@@ -34,11 +34,11 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
@@ -49,11 +49,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(554, 12);
+            this.button1.Location = new System.Drawing.Point(1046, 57);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Create New Profile";
+            this.button1.Text = "Create New Admin";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -98,6 +98,11 @@
             this.columnHeader4.Text = "Contact";
             this.columnHeader4.Width = 154;
             // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Purpose";
+            this.columnHeader7.Width = 190;
+            // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "EntryTime";
@@ -108,19 +113,14 @@
             this.columnHeader6.Text = "ExitTime";
             this.columnHeader6.Width = 86;
             // 
-            // columnHeader7
+            // columnHeader9
             // 
-            this.columnHeader7.Text = "Purpose";
-            this.columnHeader7.Width = 190;
+            this.columnHeader9.Text = "Date";
             // 
             // columnHeader8
             // 
             this.columnHeader8.Text = "Entry By";
             this.columnHeader8.Width = 119;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Date";
             // 
             // label3
             // 

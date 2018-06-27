@@ -40,6 +40,9 @@ namespace WindowsFormsApp1
                                                "values ('" + textBox1.Text + "','" + textBox2.Text + "')";
             command.ExecuteNonQuery();
             conn.Close();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            command.Dispose();
             MessageBox.Show("Entry submitted");
         }
     }

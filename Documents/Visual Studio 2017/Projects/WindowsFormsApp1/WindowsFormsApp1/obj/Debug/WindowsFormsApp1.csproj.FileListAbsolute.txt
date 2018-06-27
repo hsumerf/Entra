@@ -20,3 +20,5 @@ C:\Users\H S Umer Farooq\documents\visual studio 2017\Projects\WindowsFormsApp1\
 C:\Users\H S Umer Farooq\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
 C:\Users\H S Umer Farooq\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form3.resources
 C:\Users\H S Umer Farooq\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.NewProfile.resources
+C:\Users\H S Umer Farooq\documents\visual studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ActiveWindowForm.resources
+C:\Users\H S Umer Farooq\documents\visual studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ActiveWindow.resources

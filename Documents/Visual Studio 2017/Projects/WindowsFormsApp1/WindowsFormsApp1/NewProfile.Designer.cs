@@ -76,7 +76,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 23);
             this.button1.TabIndex = 6;
-            this.button1.Text = "Create Profile";
+            this.button1.Text = "Create Admin";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -91,7 +91,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "NewProfile";
-            this.Text = "Form4";
+            this.Text = "Admin Form";
             this.Load += new System.EventHandler(this.NewProfile_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

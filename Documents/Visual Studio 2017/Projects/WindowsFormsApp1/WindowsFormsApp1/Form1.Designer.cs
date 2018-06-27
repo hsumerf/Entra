@@ -39,6 +39,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.SerialNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.InPerson = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Time = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CNICNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button3 = new System.Windows.Forms.Button();
+            this.status = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // visitorName
@@ -131,10 +138,11 @@
             // 
             this.dateTimePicker3.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker3.Location = new System.Drawing.Point(402, 150);
+            this.dateTimePicker3.Location = new System.Drawing.Point(141, 166);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(152, 20);
             this.dateTimePicker3.TabIndex = 30;
+            this.dateTimePicker3.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
             // 
             // button1
             // 
@@ -146,11 +154,69 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.SerialNo,
+            this.InPerson,
+            this.CNICNumber,
+            this.Time});
+            this.listView1.Location = new System.Drawing.Point(343, 52);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(471, 438);
+            this.listView1.TabIndex = 32;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // SerialNo
+            // 
+            this.SerialNo.Text = "S. No";
+            this.SerialNo.Width = 73;
+            // 
+            // InPerson
+            // 
+            this.InPerson.Text = "In person";
+            this.InPerson.Width = 118;
+            // 
+            // Time
+            // 
+            this.Time.Text = "Time";
+            this.Time.Width = 122;
+            // 
+            // CNICNumber
+            // 
+            this.CNICNumber.Text = "CNIC";
+            this.CNICNumber.Width = 148;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(739, 528);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 33;
+            this.button3.Text = "Refresh";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // status
+            // 
+            this.status.AutoSize = true;
+            this.status.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.status.Location = new System.Drawing.Point(467, 20);
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(166, 26);
+            this.status.TabIndex = 34;
+            this.status.Text = "Current Status";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(310, 325);
+            this.ClientSize = new System.Drawing.Size(841, 563);
+            this.Controls.Add(this.status);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dateTimePicker3);
             this.Controls.Add(this.label6);
@@ -182,6 +248,13 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader SerialNo;
+        private System.Windows.Forms.ColumnHeader Time;
+        private System.Windows.Forms.ColumnHeader CNICNumber;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ColumnHeader InPerson;
+        private System.Windows.Forms.Label status;
     }
 }
 
