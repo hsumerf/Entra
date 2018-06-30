@@ -13,10 +13,14 @@ namespace WindowsFormsApp1
 {
     public partial class Form2 : Form
     {
+        public String admin { get; set; }
         public Form2()
         {
             InitializeComponent();
+            this.admin = userNameBox.Text;
         }
+        
+
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -27,21 +31,29 @@ namespace WindowsFormsApp1
         {
 
         }
-
+        // Inside Form2
+        // Create a public property to serve the value
+        public string TheValue
+        {
+            get { return this.admin; }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
+            
             SQLiteConnection scn = new SQLiteConnection(@"Data Source=mydb.db");
-
+            
             scn.Open();
             SQLiteCommand sq;
+            this.admin = userNameBox.Text;
+            Console.Write(this.admin);
             //sq = new SQLiteCommand("select name,cnic,entry_t,exit_t from table1 WHERE exit_t !='-'", scn);
-            sq = new SQLiteCommand("select name,password from users WHERE name ='ali'", scn);
+            sq = new SQLiteCommand("select name,password from users WHERE name ='"+this.admin+"'", scn);
 
             SQLiteDataReader dr = sq.ExecuteReader();
             dr.Read();
-            Console.WriteLine(dr["name"]);
-            Console.WriteLine(dr["password"]);
-
+            //Console.WriteLine(dr["name"]);
+            //Console.WriteLine(dr["password"]);
+            
              if (userNameBox.Text.ToString().Equals(dr["name"]) && passwordTextbox.Text.ToString().Equals(dr["password"]))
             //if(true)
             {
@@ -50,9 +62,14 @@ namespace WindowsFormsApp1
                 GC.WaitForPendingFinalizers();
                 sq.Dispose();
 
+               // Form2 frm2 = new Form2();
+                //frm2.admin = userNameBox.Text.ToString();
+                //Console.WriteLine(frm2.admin);
 
-                Form1 frm = new Form1();
-                frm.Show();
+                Form1 frm1 = new Form1();
+                frm1.CurrentAdmin = userNameBox.Text;
+                
+                frm1.Show();
                 
             }
             else

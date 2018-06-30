@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Diagnostics;
 namespace WindowsFormsApp1
 {
     public partial class Form3 : Form
@@ -79,6 +79,33 @@ namespace WindowsFormsApp1
         {
             NewProfile np = new NewProfile();
             np.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+                ExportToExcel("history.csv", listView1);
+            
+        }
+
+        private void ExportToExcel(string path, ListView listsource)
+        {
+            StringBuilder CVS = new StringBuilder();
+            for (int i = 0; i < listsource.Columns.Count; i++)
+            {
+                CVS.Append(listsource.Columns[i].Text + ",");
+            }
+            CVS.Append(Environment.NewLine);
+            for (int i = 0; i < listsource.Items.Count; i++)
+            {
+                for (int j = 0; j < listsource.Columns.Count; j++)
+                {
+                    CVS.Append(listsource.Items[i].SubItems[j].Text + ",");
+                }
+                CVS.Append(Environment.NewLine);
+            }
+            System.IO.File.WriteAllText(path, CVS.ToString());
+            Process.Start(path);
         }
     }
 }

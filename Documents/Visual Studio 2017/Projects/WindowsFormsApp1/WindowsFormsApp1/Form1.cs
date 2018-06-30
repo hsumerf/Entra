@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using System.IO;
+using System.Threading;
 
 namespace WindowsFormsApp1
 {
@@ -16,9 +17,9 @@ namespace WindowsFormsApp1
     public partial class Form1 : Form
     {
 
+          
+        public string CurrentAdmin { get; set; }
 
-        public string admin;
-   
         //SQLiteConnection conn = new SQLiteConnection(@"Data Source=C:\Users\H S Umer Farooq\mydb.db");
         SQLiteConnection conn = new SQLiteConnection(@"Data Source=mydb.db");
 
@@ -46,9 +47,24 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
-            command = new SQLiteCommand(conn);
-            conn.Open();
+            // for sing in username
+           // listView1.Items.Clear();
+            //SQLiteConnection scn = new SQLiteConnection(@"Data Source=C:\Users\H S Umer Farooq\mydb.db");
+            SQLiteConnection scn = new SQLiteConnection(@"Data Source = mydb.db");
+
+            scn.Open();
+            SQLiteCommand sq = new SQLiteCommand("INSERT INTO table1 (Name,CNIC,Contactno,purpose,entry_t,exit_t,date,admin) " +
+                                               "values ('" + visitorName.Text + "','" + CNIC.Text + "','" + ContactNo.Text + "','" + VisitPurpose.Text + "','"
+                                        
+                                               + DateTime.Now.ToShortTimeString().ToString() + "','" + "-" + "','" + dateTimePicker3.Text + "','" + CurrentAdmin + "')", scn);
+            sq.ExecuteNonQuery();
+              
+            //SQLiteConnection scn = new SQLiteConnection(@"Data Source=mydb.db");
+
+            //scn.Open();
+           
+            //command = new SQLiteCommand(scn);
+        
 
             //if (!File.Exists(DatabaseFile))
             //{
@@ -59,19 +75,14 @@ namespace WindowsFormsApp1
 
             //}
             //Entry entries = new Entry(DateTime.Now, VisitPurpose.Text);
-            //Profile profileUser = new Profile(visitorName.Text, FatherName.Text, CNIC.Text, ContactNo.Text, Address.Text, entries);
-            //List<Profile> profilesList = new List<Profile>();
-            // profilesList.Add(profileUser);
-            string admin = "umer";
-            command.CommandText = "INSERT INTO table1 (Name,CNIC,Contactno,purpose,entry_t,exit_t,date,admin) " +
-                                               "values ('" + visitorName.Text + "','" + CNIC.Text + "','" + ContactNo.Text + "','" + VisitPurpose.Text + "','"
-                                               + DateTime.Now.ToShortTimeString().ToString() + "','" + "-" + "','" + dateTimePicker3.Text + "','" + admin + "')";
-            command.ExecuteNonQuery();
-            conn.Close();
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
-            command.Dispose();
-            MessageBox.Show("Entry submitted");
+            
+            //command.CommandText = ;
+            //command.ExecuteNonQuery();
+            //conn.Close();
+            //GC.Collect();
+            //GC.WaitForPendingFinalizers();
+            //command.Dispose();
+            MessageBox.Show("by"+ CurrentAdmin);
 
 
         }
@@ -84,6 +95,7 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
             Text = "Active Window";
+            MessageBox.Show(CurrentAdmin);
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -146,6 +158,18 @@ namespace WindowsFormsApp1
             GC.Collect();
             GC.WaitForPendingFinalizers();
             sq.Dispose();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SQLiteConnection scn = new SQLiteConnection(@"Data Source=mydb.db");
+
+            scn.Open();
+            SQLiteCommand sq;
+            sq = new SQLiteCommand("update table1 set exit_t='" + DateTime.Now.ToShortTimeString() + "' where id='" + listView1.SelectedItems[0].Text + "'", scn);
+            Console.WriteLine(listView1.SelectedItems[0].Text);
+            sq.ExecuteNonQuery();
+            button3.PerformClick();
         }
     }
 }
