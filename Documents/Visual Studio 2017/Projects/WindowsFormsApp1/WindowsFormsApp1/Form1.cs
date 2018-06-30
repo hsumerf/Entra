@@ -53,18 +53,19 @@ namespace WindowsFormsApp1
             SQLiteConnection scn = new SQLiteConnection(@"Data Source = mydb.db");
 
             scn.Open();
-            SQLiteCommand sq = new SQLiteCommand("INSERT INTO table1 (Name,CNIC,Contactno,purpose,entry_t,exit_t,date,admin) " +
-                                               "values ('" + visitorName.Text + "','" + CNIC.Text + "','" + ContactNo.Text + "','" + VisitPurpose.Text + "','"
-                                        
-                                               + DateTime.Now.ToShortTimeString().ToString() + "','" + "-" + "','" + dateTimePicker3.Text + "','" + CurrentAdmin + "')", scn);
+            SQLiteCommand sq = new SQLiteCommand("INSERT INTO profiles (CNIC,Name,Father Name,Contact,Address) " +
+                                               "values ('" + CNIC.Text + "','" + visitorName.Text + "','" + ContactNo.Text + "','" + Address + "')", scn);
             sq.ExecuteNonQuery();
-              
+            SQLiteCommand sq = new SQLiteCommand("INSERT INTO entries (cnic,entry_t,entry_date exit_time,exit_date,operator) " +
+                                               "values ('" + CNIC.Text + "','" + visitorName.Text + "','" + ContactNo.Text + "','" + Address + "')", scn);
+            sq.ExecuteNonQuery();
+
             //SQLiteConnection scn = new SQLiteConnection(@"Data Source=mydb.db");
 
             //scn.Open();
-           
+
             //command = new SQLiteCommand(scn);
-        
+
 
             //if (!File.Exists(DatabaseFile))
             //{
@@ -75,7 +76,7 @@ namespace WindowsFormsApp1
 
             //}
             //Entry entries = new Entry(DateTime.Now, VisitPurpose.Text);
-            
+
             //command.CommandText = ;
             //command.ExecuteNonQuery();
             //conn.Close();
@@ -163,7 +164,10 @@ namespace WindowsFormsApp1
         private void button4_Click(object sender, EventArgs e)
         {
             SQLiteConnection scn = new SQLiteConnection(@"Data Source=mydb.db");
-
+            // for ID in data base 
+            SQLiteCommand sq;
+            sq = new SQLiteCommand("SELECT id FROM table1", scn);
+            SQLiteDataReader dr = sq.ExecuteReader();
             scn.Open();
             SQLiteCommand sq;
             sq = new SQLiteCommand("update table1 set exit_t='" + DateTime.Now.ToShortTimeString() + "' where id='" + listView1.SelectedItems[0].Text + "'", scn);
