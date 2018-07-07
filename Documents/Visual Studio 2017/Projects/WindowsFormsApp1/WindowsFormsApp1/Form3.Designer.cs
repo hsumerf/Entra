@@ -32,7 +32,7 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cnic = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,6 +46,8 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.fName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // button1
@@ -63,13 +65,15 @@
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3,
+            this.cnic,
             this.columnHeader4,
             this.columnHeader7,
+            this.address,
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader9,
-            this.columnHeader8});
+            this.columnHeader8,
+            this.fName});
             this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(12, 108);
             this.listView1.Name = "listView1";
@@ -86,42 +90,51 @@
             // 
             // columnHeader2
             // 
+            this.columnHeader2.DisplayIndex = 2;
             this.columnHeader2.Text = "Name";
-            this.columnHeader2.Width = 150;
+            this.columnHeader2.Width = 108;
             // 
-            // columnHeader3
+            // cnic
             // 
-            this.columnHeader3.Text = "CNIC";
-            this.columnHeader3.Width = 195;
+            this.cnic.DisplayIndex = 1;
+            this.cnic.Text = "CNIC";
+            this.cnic.Width = 144;
             // 
             // columnHeader4
             // 
+            this.columnHeader4.DisplayIndex = 4;
             this.columnHeader4.Text = "Contact";
-            this.columnHeader4.Width = 154;
+            this.columnHeader4.Width = 95;
             // 
             // columnHeader7
             // 
+            this.columnHeader7.DisplayIndex = 6;
             this.columnHeader7.Text = "Purpose";
             this.columnHeader7.Width = 190;
             // 
             // columnHeader5
             // 
+            this.columnHeader5.DisplayIndex = 7;
             this.columnHeader5.Text = "EntryTime";
-            this.columnHeader5.Width = 107;
+            this.columnHeader5.Width = 74;
             // 
             // columnHeader6
             // 
+            this.columnHeader6.DisplayIndex = 8;
             this.columnHeader6.Text = "ExitTime";
             this.columnHeader6.Width = 86;
             // 
             // columnHeader9
             // 
+            this.columnHeader9.DisplayIndex = 9;
             this.columnHeader9.Text = "Date";
+            this.columnHeader9.Width = 75;
             // 
             // columnHeader8
             // 
+            this.columnHeader8.DisplayIndex = 10;
             this.columnHeader8.Text = "Entry By";
-            this.columnHeader8.Width = 119;
+            this.columnHeader8.Width = 125;
             // 
             // label3
             // 
@@ -189,6 +202,16 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // address
+            // 
+            this.address.Text = "address";
+            this.address.Width = 157;
+            // 
+            // fName
+            // 
+            this.fName.DisplayIndex = 3;
+            this.fName.Text = "FName";
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,7 +240,7 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader cnic;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader5;
@@ -231,5 +254,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ColumnHeader address;
+        private System.Windows.Forms.ColumnHeader fName;
     }
 }
