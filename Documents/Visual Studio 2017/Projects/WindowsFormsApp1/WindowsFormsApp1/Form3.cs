@@ -43,8 +43,11 @@ namespace WindowsFormsApp1
 
             scn.Open();
             SQLiteCommand sq;
-            sq = new SQLiteCommand("select * from table1 where date between '" + dateTimePicker2.Text + "' and '" + dateTimePicker3.Text + "'", scn);
+            //sq = new SQLiteCommand("select * from table1 where date between '" + dateTimePicker2.Text + "' and '" + dateTimePicker3.Text + "'", scn);
+            sq = new SQLiteCommand("select * from profiles where date between '" + dateTimePicker2.Text + "' and '" + dateTimePicker3.Text + "'", scn);
             SQLiteDataReader dr = sq.ExecuteReader();
+
+
 
             while (dr.Read())
             {
@@ -53,12 +56,14 @@ namespace WindowsFormsApp1
                                                             
                                                              dr["name"].ToString(),
                                                              dr["cnic"].ToString(),
-                                                             dr["contactno"].ToString(),
-                                                             dr["purpose"].ToString(),
-                                                             dr["entry_t"].ToString(),
-                                                             dr["exit_t"].ToString(),
-                                                             dr["date"].ToString(),
-                                                             dr["admin"].ToString()}));
+                                                             dr["fatherName"].ToString(),
+                                                             dr["contact"].ToString(),
+                                                             dr["address"].ToString()
+                                                          //   dr["entry_t"].ToString(),
+                                                           //  dr["exit_t"].ToString(),
+                                                            // dr["date"].ToString(),
+                                                            // dr["admin"].ToString()
+                                                                                    }));
             }
 
         }

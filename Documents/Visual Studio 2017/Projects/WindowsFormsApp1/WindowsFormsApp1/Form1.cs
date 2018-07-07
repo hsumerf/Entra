@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
         //SQLiteConnection conn = new SQLiteConnection(@"Data Source=C:\Users\H S Umer Farooq\mydb.db");
         SQLiteConnection conn = new SQLiteConnection(@"Data Source=mydb.db");
 
-        SQLiteCommand command;
+      //  SQLiteCommand command;
         public Form1()
         {
             InitializeComponent();
@@ -53,13 +53,14 @@ namespace WindowsFormsApp1
             SQLiteConnection scn = new SQLiteConnection(@"Data Source = mydb.db");
 
             scn.Open();
-            SQLiteCommand sq = new SQLiteCommand("INSERT INTO profiles (CNIC,Name,Father Name,Contact,Address) " +
-                                               "values ('" + CNIC.Text + "','" + visitorName.Text + "','" + ContactNo.Text + "','" + Address + "')", scn);
+            // sql columns names are in small letter
+            SQLiteCommand sq = new SQLiteCommand("INSERT INTO profiles (cnic,name,fatherName,contact,address) " +
+                                               "values ('" + CNIC.Text + "','" + visitorName.Text + "','" + fatherName.Text + "','" + ContactNo.Text + "','" + address.Text + "')", scn);
             sq.ExecuteNonQuery();
-            SQLiteCommand sq = new SQLiteCommand("INSERT INTO entries (cnic,entry_t,entry_date exit_time,exit_date,operator) " +
-                                               "values ('" + CNIC.Text + "','" + visitorName.Text + "','" + ContactNo.Text + "','" + Address + "')", scn);
-            sq.ExecuteNonQuery();
-
+         //   SQLiteCommand sq = new SQLiteCommand("INSERT INTO entries (cnic,entry_t,entry_date exit_time,exit_date,operator) " +
+           //                                    "values ('" + CNIC.Text + "','" + fatherName.Text + "','" + ContactNo.Text + "','" + address.Text + "')", scn);
+           // sq.ExecuteNonQuery();
+            scn.Close();
             //SQLiteConnection scn = new SQLiteConnection(@"Data Source=mydb.db");
 
             //scn.Open();
@@ -138,18 +139,21 @@ namespace WindowsFormsApp1
 
             scn.Open();
             SQLiteCommand sq;
-            sq = new SQLiteCommand("select name,cnic,entry_t from table1", scn);
+            SQLiteCommand sq_t;
+            sq = new SQLiteCommand("select name,cnic from profiles", scn);
             SQLiteDataReader dr = sq.ExecuteReader();
+            sq_t = new SQLiteCommand("select  entry_time from entries", scn);
+            SQLiteDataReader dr_t = sq_t.ExecuteReader();
+
             int index = 1;
-            while (dr.Read())
+            while (dr.Read() && dr_t.Read())
             {
                 String indexTab = index.ToString();
                 listView1.Items.Add(new ListViewItem(new[] {
                                                             indexTab,
                                                              dr["name"].ToString(),
                                                              dr["cnic"].ToString(),
-                                                             dr["entry_t"].ToString(),
-                                                            
+                                                            dr_t["entry_time"].ToString()
                                                              }));
                 index++;
 
@@ -164,16 +168,21 @@ namespace WindowsFormsApp1
         private void button4_Click(object sender, EventArgs e)
         {
             SQLiteConnection scn = new SQLiteConnection(@"Data Source=mydb.db");
+            scn.Open();
+
             // for ID in data base 
             SQLiteCommand sq;
-            sq = new SQLiteCommand("SELECT id FROM table1", scn);
+            sq = new SQLiteCommand("SELECT id FROM entries", scn);
             SQLiteDataReader dr = sq.ExecuteReader();
-            scn.Open();
-            SQLiteCommand sq;
-            sq = new SQLiteCommand("update table1 set exit_t='" + DateTime.Now.ToShortTimeString() + "' where id='" + listView1.SelectedItems[0].Text + "'", scn);
+            sq = new SQLiteCommand("update entries set exit_time='" + DateTime.Now.ToShortTimeString() + "' where id='" + listView1.SelectedItems[0].Text + "'", scn);
             Console.WriteLine(listView1.SelectedItems[0].Text);
             sq.ExecuteNonQuery();
             button3.PerformClick();
+        }
+
+        private void fatherName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
